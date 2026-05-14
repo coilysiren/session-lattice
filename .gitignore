@@ -1,0 +1,16 @@
+.claude/settings.local.json
+.claude/worktrees/
+.DS_Store
+node_modules/
+target/
+dist/
+build/
+pkg/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+uv.lock

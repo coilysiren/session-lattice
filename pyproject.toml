@@ -1,0 +1,38 @@
+[project]
+name = "session-lattice"
+version = "0.0.0"
+description = "Materialized-view service over Claude session data. Pulls from repo-recall, maintains views via Feldera, serves over HTTP."
+readme = "README.md"
+requires-python = ">=3.13"
+license = { text = "MIT" }
+authors = [{ name = "Kai Siren" }]
+dependencies = []
+
+[tool.uv]
+managed = true
+
+[dependency-groups]
+dev = [
+  "mypy>=1.20",
+  "pre-commit>=4.5",
+  "pytest>=8.0",
+  "ruff>=0.15",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+
+[tool.mypy]
+strict = true
+python_version = "3.13"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["session_lattice"]

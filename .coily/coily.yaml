@@ -1,0 +1,31 @@
+# Per-repo command allowlist for session-lattice. The harness denies bare
+# `uv:*` and `make:*` invocations; dev verbs route through coily so each
+# call lands in the audit log.
+
+commands:
+  sync:
+    run: make sync
+    description: uv sync the workspace.
+  lint:
+    run: make lint
+    description: Run ruff + mypy.
+  fmt:
+    run: make fmt
+    description: Format with ruff.
+  test:
+    run: make test
+    description: Run pytest. (No tests yet; placeholder until first view lands.)
+
+# Catalog metadata for the cross-repo knowledge graph.
+# Schema: coilysiren/coilyco-ai#420 (tracker).
+catalog:
+  kind: Component
+  type: service
+  system: observability
+  owner: kai
+  lifecycle: experimental
+  description: "Materialized-view service over Claude session data. Pulls from repo-recall, maintains views via Feldera, serves over HTTP to luca."
+  dependsOn:
+    - coilysiren/repo-recall
+  providesApis:
+    - session-lattice-views
