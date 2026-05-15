@@ -8,8 +8,10 @@ Three-layer architecture across coilysiren/*:
 - **session-lattice** (this repo) - pulls from repo-recall on a tick, maintains a lattice of materialized views via Feldera (DBSP, incremental view maintenance), serves view reads over HTTP.
 - [coilysiren/luca](https://github.com/coilysiren/luca) - stateless. Queries session-lattice and turns the views into insights.
 
-See [docs/architecture.md](docs/architecture.md) for the design rationale and [docs/decisions.md](docs/decisions.md) for the recorded choices.
+See [docs/architecture.md](docs/architecture.md) for the design rationale.
 
 ## Status
 
 Pre-cable. Repo scaffolded, no service yet. Replaces the archived `coilysiren/otel-a2a-relay`.
+
+The view-inspection surface is Feldera's built-in web console (ad-hoc SQL against materialized views in a running pipeline). No separate dashboard layer.

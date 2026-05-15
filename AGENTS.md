@@ -10,7 +10,7 @@ Materialized-view service. Pulls Claude-session row data from `coilysiren/repo-r
 
 - Not an OTel relay. The archived predecessor `coilysiren/otel-a2a-relay` was. This repo replaces it with a different architectural identity.
 - Not an ingest endpoint for the Claude Code `PostToolUse` hook. The hook is retired. Repo-recall reads session JSONL directly.
-- Not a UI. CLI + curl + luca digests during cable-laying. See [docs/decisions.md](docs/decisions.md) for the future-UI direction.
+- Not a UI. Feldera's built-in web console covers the inspect / debug surface. CLI + curl + luca digests cover the rest.
 
 ## Layering rules
 
