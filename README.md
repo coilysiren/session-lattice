@@ -15,3 +15,11 @@ See [docs/architecture.md](docs/architecture.md) for the design rationale.
 Pre-cable. Repo scaffolded, no service yet. Replaces the archived `coilysiren/otel-a2a-relay`.
 
 The view-inspection surface is Feldera's built-in web console (ad-hoc SQL against materialized views in a running pipeline). No separate dashboard layer.
+
+## See also
+
+- [AGENTS.md](AGENTS.md) - agent-facing operating rules.
+- [docs/FEATURES.md](docs/FEATURES.md) - inventory of what ships today.
+- [.coily/coily.yaml](.coily/coily.yaml) - allowlisted commands.
+
+Cross-reference convention from [coilysiren/agentic-os#59](https://github.com/coilysiren/agentic-os/issues/59).

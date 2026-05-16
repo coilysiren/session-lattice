@@ -21,3 +21,11 @@ Materialized-view service. Pulls Claude-session row data from `coilysiren/repo-r
 ## Caching
 
 Two caches stack here: repo-recall's per-source TTLs and session-lattice's per-view refresh tick. End-to-end staleness is the sum. Document the per-view refresh interval in the view definition, never inline.
+
+## See also
+
+- [README.md](README.md) - human-facing intro.
+- [docs/FEATURES.md](docs/FEATURES.md) - inventory of what ships today.
+- [.coily/coily.yaml](.coily/coily.yaml) - allowlisted commands.
+
+Cross-reference convention from [coilysiren/agentic-os#59](https://github.com/coilysiren/agentic-os/issues/59).
