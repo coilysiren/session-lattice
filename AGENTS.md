@@ -6,12 +6,6 @@ See `../AGENTS.md` for workspace-level conventions (git workflow, test/lint auto
 
 Materialized-view service. Pulls Claude-session row data from `coilysiren/repo-recall` on a refresh tick, maintains a lattice of views inside Feldera (DBSP, incremental view maintenance), exposes the views via HTTP for `coilysiren/luca` and other consumers.
 
-## What this is not
-
-- Not an OTel relay. The archived predecessor `coilysiren/otel-a2a-relay` was. This repo replaces it with a different architectural identity.
-- Not an ingest endpoint for the Claude Code `PostToolUse` hook. The hook is retired. Repo-recall reads session JSONL directly.
-- Not a UI. Feldera's built-in web console covers the inspect / debug surface. CLI + curl + luca digests cover the rest.
-
 ## Layering rules
 
 - Upstream: repo-recall. Pull only. Never push.
